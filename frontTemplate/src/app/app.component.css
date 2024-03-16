@@ -1,0 +1,14 @@
+.myPage{
+  height: 100vh;
+  /* background-color: red; */
+  background-image: url('/assets/Images/BG4.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.routing{
+  height: 90vh;
+  width: 80%;
+  margin: auto;
+}

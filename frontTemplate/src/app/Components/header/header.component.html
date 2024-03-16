@@ -1,0 +1,31 @@
+<div class="d-flex justify-content-between">
+  <div>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon "></span>
+        </button>
+
+        <a class="navbar-brand mytext projName" routerLink="/main">MyProject</a>
+
+        <div class="collapse navbar-collapse position-absolute menu" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a  routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="nav-link mytext" aria-current="page" routerLink="/main">Home</a>
+            </li>
+            <li class="nav-item">
+              <a  routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="nav-link mytext" routerLink="/login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a  routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="nav-link mytext" routerLink="/signup">Register</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div>
+    <a routerLink="/login" class="btn d-flex myLog">Login</a>
+  </div>
+</div>

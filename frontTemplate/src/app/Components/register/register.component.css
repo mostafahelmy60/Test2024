@@ -1,0 +1,64 @@
+/* .myPage{
+  height: 90vh;
+  width: 90%;
+  margin: auto;
+} */
+
+.myInp{
+  border-radius: 20px;
+  /* margin-left: 20%; */
+  width: 90%;
+}
+
+.mmm{
+  padding-right: 30px;
+}
+
+.myForm{
+  padding: 15px 40px;
+  border: 2px solid rgb(255, 255, 255);
+  color: #fff;
+  background: transparent;
+  border-radius: 10px;
+  backdrop-filter: blur(20px);
+}
+label svg{
+  color: darkgrey;
+}
+
+.lockPass:hover{
+  cursor: pointer ;
+}
+.rmmm{
+  font-size: 10pt;
+}
+
+.fpas{
+  font-size: 10pt;
+  margin-left: 5%;
+}
+.btnC{
+  margin: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  transition: 2s;
+}
+.btnC:hover{
+  border-top-right-radius: 0px ;
+  border-bottom-left-radius: 0px ;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.ddd{
+  color: grey;
+  color-scheme: grey;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  /* display: none; */
+  color-scheme: grey;
+  color: grey;
+
+}
+
