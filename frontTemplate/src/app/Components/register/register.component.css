@@ -42,6 +42,8 @@ label svg{
   padding-left: 20px;
   padding-right: 20px;
   transition: 2s;
+  font-weight: bolder;
+  font-size: x-large;
 }
 .btnC:hover{
   border-top-right-radius: 0px ;

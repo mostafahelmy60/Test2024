@@ -1,8 +1,8 @@
 <div class="d-flex justify-content-center align-items-center mt-3">
-  <form action="#" class="myForm form text-center justify-content-center justify-item-center">
+  <form [formGroup]="regForm" (submit)="SubmitForm()" class="myForm form text-center justify-content-center justify-item-center">
     <h1>Register</h1>
     <div class="m-2 d-flex justify-content-center position-relative">
-      <input class="myInp form-control outline-none border border-0" type="text" placeholder="Name">
+      <input formControlName="name" class="myInp form-control outline-none border border-0" type="text" placeholder="Name">
       <label class="position-absolute mt-1 end-0 mmm">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
           <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
@@ -10,7 +10,7 @@
       </label>
     </div>
     <div class="m-2 d-flex justify-content-center position-relative">
-      <input (mouseover)="chgEmail1($event,cal)" (mouseout)="chgEmail2($event,cal)" class="myInp form-control outline-none border border-0 ddd" type="text" placeholder="BirthDate">
+      <input formControlName="birthdate" (mouseover)="chgBirth1($event,cal)" (mouseout)="chgBirth2($event,cal)" class="myInp form-control outline-none border border-0 ddd" type="text" placeholder="BirthDate">
       <label class="position-absolute mt-1 end-0 mmm" #cal>
         <svg class="bi bi-calendar-check" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
           <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0"/>
@@ -19,7 +19,7 @@
       </label>
     </div>
     <div class="m-2 d-flex justify-content-center position-relative">
-      <input class="myInp form-control outline-none border border-0" type="email" placeholder="Email">
+      <input formControlName="email" class="myInp form-control outline-none border border-0" type="email" placeholder="Email">
       <label class="position-absolute mt-1 end-0 mmm">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-at-fill" viewBox="0 0 16 16">
           <path d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2zm-2 9.8V4.698l5.803 3.546zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.5 4.5 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586zM16 9.671V4.697l-5.803 3.546.338.208A4.5 4.5 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671"/>
@@ -28,7 +28,7 @@
       </label>
     </div>
     <div class="m-2 d-flex justify-content-center position-relative">
-      <input #pass class="myInp form-control outline-none border border-0" type="password" placeholder="Password">
+      <input formControlName="password" #pass class="myInp form-control outline-none border border-0" type="password" placeholder="Password">
       <label class="position-absolute mt-1 end-0 mmm">
         <svg (mousedown)="chgPass1(pass)" (mouseup)="chgPass2(pass)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill lockPass" viewBox="0 0 16 16">
           <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
@@ -36,14 +36,17 @@
       </label>
     </div>
     <div class="m-2 d-flex justify-content-center position-relative">
-      <input #pass2 class="myInp form-control outline-none border border-0" type="password" placeholder="Re-Enter Password">
+      <input formControlName="confirmpassword" #pass2 class="myInp form-control outline-none border border-0" type="password" placeholder="Re-Enter Password">
       <label class="position-absolute mt-1 end-0 mmm">
         <svg (mousedown)="chgPass1(pass2)" (mouseup)="chgPass2(pass2)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill lockPass" viewBox="0 0 16 16">
           <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
         </svg>
       </label>
     </div>
-    <div class="m-2 d-flex justify-content-center position-relative">
+    @if (passmatchgetter) {
+      <div>Password Must Matches</div>
+    }
+    <!-- <div class="m-2 d-flex justify-content-center position-relative">
       <input class="myInp form-control outline-none border border-0" type="file" accept="image/png, image/jpeg">
       <label class="position-absolute mt-1 end-0 mmm">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-image" viewBox="0 0 16 16">
@@ -51,9 +54,9 @@
           <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1z"/>
         </svg>
       </label>
-    </div>
+    </div> -->
     <div>
-      <input class="btn btn-outline-success btnC" type="submit" value="LogIn">
+      <input [disabled]="!regForm.valid" class="btn btn-outline-success btnC" type="submit" value="Register">
     </div>
 </form>
 </div>
